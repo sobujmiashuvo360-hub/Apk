@@ -3,83 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FriendBook - Download App</title>
+    <title>FriendBook - Download Premium App</title>
     <style>
-        /* CSS অংশ */
+        /* Premium Dark Green Theme CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0a1f15 0%, #103322 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        /* ব্যাকগ্রাউন্ড গ্লো ইফেক্ট */
+        .bg-glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #00ff73;
+            filter: blur(150px);
+            opacity: 0.15;
+            top: -50px;
+            right: -50px;
+            border-radius: 50%;
+            z-index: 0;
         }
 
         .container {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: rgba(18, 43, 30, 0.6);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             max-width: 350px;
             width: 90%;
         }
 
+        /* প্রিমিয়াম লোগো স্টাইল */
         .logo-container {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 25px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #28a745;
+            border: 4px solid #00c464;
+            box-shadow: 0 0 25px rgba(0, 196, 100, 0.4);
             display: flex;
             justify-content: center;
             align-items: center;
             background: #fff;
+            padding: 4px; /* লোগোর চারপাশে হালকা সাদা বর্ডার ফিল্টার */
         }
 
         .logo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 50%;
         }
 
         .brand-name {
-            color: #28a745;
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
 
+        .subtitle {
+            font-size: 14px;
+            color: #a0c2b1;
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        /* প্রিমিয়াম ডাউনলোড বাটন */
         .download-btn {
-            background-color: #28a745;
+            background: linear-gradient(90deg, #00b85c 0%, #008a45 100%);
             color: white;
             border: none;
-            padding: 15px 25px;
+            padding: 16px 30px;
             font-size: 18px;
             font-weight: 600;
-            border-radius: 8px;
+            border-radius: 50px;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 184, 92, 0.3);
         }
 
         .download-btn:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 184, 92, 0.5);
+            background: linear-gradient(90deg, #00c464 0%, #009e4f 100%);
         }
 
         .download-btn:active {
-            transform: translateY(0);
+            transform: translateY(1px);
+            box-shadow: 0 5px 15px rgba(0, 184, 92, 0.3);
+        }
+
+        .download-icon {
+            width: 22px;
+            height: 22px;
+            fill: currentColor;
         }
     </style>
 </head>
 <body>
+
+    <div class="bg-glow"></div>
 
     <div class="container">
         <div class="logo-container">
@@ -87,19 +134,15 @@
         </div>
 
         <div class="brand-name">FriendBook</div>
+        <div class="subtitle">অফিসিয়াল অ্যাপ্লিকেশন (v1.0)</div>
 
-        <a href="আপনার_এপিকে_ডাউনলোড_লিংক_এখানে_দিন" id="downloadLink" class="download-btn">
-            অ্যাপ্লিকেশন ডাউনলোড করুন
+        <a href="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/FriendBook.apk" id="downloadLink" class="download-btn">
+            <svg class="download-icon" viewBox="0 0 24 24">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            ডাউনলোড করুন
         </a>
     </div>
-
-    <script>
-        // জাভাস্ক্রিপ্ট অংশ (ভবিষ্যতে কোনো ট্র্যাকিং বা অ্যানিমেশন যোগ করতে চাইলে)
-        document.getElementById('downloadLink').addEventListener('click', function() {
-            console.log("ডাউনলোড শুরু হচ্ছে...");
-            // এখানে আপনি চাইলে অতিরিক্ত কোনো ফাংশন যোগ করতে পারেন
-        });
-    </script>
 
 </body>
 </html>
