@@ -3,124 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FriendBook - Download Premium App</title>
+    <title>FriendBook - Premium Download</title>
     <style>
-        /* Premium Dark Green Theme CSS */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Hind+Siliguri:wght@400;600&display=swap');
 
         body {
             margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
+            padding: 20px 0;
+            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
             background: linear-gradient(135deg, #0a1f15 0%, #103322 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             color: #ffffff;
-            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* ব্যাকগ্রাউন্ড গ্লো ইফেক্ট */
+        /* ব্যাকগ্রাউন্ড গ্লো */
         .bg-glow {
-            position: absolute;
-            width: 350px;
-            height: 350px;
+            position: fixed;
+            width: 400px;
+            height: 400px;
             background: #00ff73;
-            filter: blur(150px);
-            opacity: 0.15;
-            top: -50px;
-            right: -50px;
-            border-radius: 50%;
-            z-index: 0;
+            filter: blur(160px);
+            opacity: 0.1;
+            top: -100px;
+            z-index: -1;
         }
 
         .container {
-            position: relative;
-            z-index: 1;
             text-align: center;
-            background: rgba(18, 43, 30, 0.6);
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            max-width: 350px;
+            background: rgba(18, 43, 30, 0.7);
+            padding: 35px 25px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            max-width: 380px;
             width: 90%;
+            margin-bottom: 30px;
         }
 
-        /* প্রিমিয়াম চারকোনা (Rounded Corners) লোগো স্টাইল */
-        .logo-container {
-            width: 100px; /* আগের চেয়ে একটু ছোট সাইজ */
-            height: 100px; /* আগের চেয়ে একটু ছোট সাইজ */
-            margin: 0 auto 25px;
-            border-radius: 18px; /* চারকোনা কিন্তু কোণ হালকা বাঁকানো */
-            overflow: hidden;
-            border: 3px solid #00c464; /* সবুজ বর্ডার */
-            box-shadow: 0 0 20px rgba(0, 196, 100, 0.3); /* গ্লো ইফেক্ট */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #fff; /* লোগোর ব্যাকগ্রাউন্ড সাদা */
-            padding: 3px; /* বর্ডারের ভেতরের ফাকা জায়গা */
+        /* লোগো সেকশন */
+        .logo-box {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 15px;
+            border-radius: 20px;
+            border: 3px solid #00c464;
+            padding: 4px;
+            background: #fff;
+            box-shadow: 0 0 20px rgba(0, 196, 100, 0.3);
         }
 
-        .logo-container img {
+        .logo-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 14px; /* ইমেজটির কোণও হালকা বাঁকানো থাকবে */
+            border-radius: 14px;
         }
 
         .brand-name {
-            color: #ffffff;
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 1.5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+            color: #fff;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
         }
 
-        .subtitle {
-            font-size: 14px;
-            color: #a0c2b1;
-            margin-bottom: 35px;
-            font-weight: 400;
-        }
-
-        /* প্রিমিয়াম ডাউনলোড বাটন */
+        /* ডাউনলোড বাটন */
         .download-btn {
             background: linear-gradient(90deg, #00b85c 0%, #008a45 100%);
             color: white;
-            border: none;
-            padding: 16px 30px;
+            padding: 15px 35px;
             font-size: 18px;
             font-weight: 600;
             border-radius: 50px;
-            cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(0, 184, 92, 0.3);
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(0, 184, 92, 0.3);
+            transition: 0.3s;
+            margin-bottom: 10px;
         }
 
         .download-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(0, 184, 92, 0.5);
-            background: linear-gradient(90deg, #00c464 0%, #009e4f 100%);
+            box-shadow: 0 15px 25px rgba(0, 184, 92, 0.5);
         }
 
-        .download-btn:active {
-            transform: translateY(1px);
-            box-shadow: 0 5px 15px rgba(0, 184, 92, 0.3);
+        /* ভিডিও সেকশন */
+        .video-section {
+            margin-top: 30px;
+            width: 100%;
         }
 
-        .download-icon {
-            width: 22px;
-            height: 22px;
-            fill: currentColor;
+        .video-label {
+            font-size: 15px;
+            color: #a0c2b1;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* প্রিমিয়াম ভিডিও প্লেয়ার (1:1 Ratio) */
+        .video-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #000;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 196, 100, 0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* কাস্টম প্লে বাটন (মাঝখানে) */
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 184, 92, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+            z-index: 2;
+        }
+
+        .play-overlay svg {
+            width: 35px;
+            height: 35px;
+            fill: white;
+            margin-left: 5px;
+        }
+
+        /* প্লে হওয়া অবস্থায় বাটন লুকানো */
+        .playing .play-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(-50%, -50%) scale(1.5);
         }
     </style>
 </head>
@@ -129,20 +162,53 @@
     <div class="bg-glow"></div>
 
     <div class="container">
-        <div class="logo-container">
-            <img src="logo.png" alt="FriendBook Logo">
+        <div class="logo-box">
+            <img src="logo.png" alt="Logo">
         </div>
 
         <div class="brand-name">FriendBook</div>
-        <div class="subtitle">অফিসিয়াল অ্যাপ্লিকেশন (v5.0)</div>
 
-        <a href="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/FriendBook.apk" id="downloadLink" class="download-btn">
-            <svg class="download-icon" viewBox="0 0 24 24">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-            </svg>
+        <a href="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/friendbook.apk" class="download-btn">
+            <svg style="width:22px;height:22px" viewBox="0 0 24 24"><path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg>
             ডাউনলোড করুন
         </a>
+
+        <div class="video-section">
+            <span class="video-label">Install  করার আগে এই ভিডিওটি দেখুন</span>
+            
+            <div class="video-container" id="videoWrapper">
+                <video id="myVideo" preload="metadata">
+                    <source src="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/vid.mp4" type="video/mp4">
+                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
+                </video>
+                
+                <div class="play-overlay" id="playBtn">
+                    <svg viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" /></svg>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <script>
+        const video = document.getElementById('myVideo');
+        const wrapper = document.getElementById('videoWrapper');
+
+        // ভিডিও বা কন্টেইনারে ক্লিক করলে প্লে/পজ হবে
+        wrapper.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                wrapper.classList.add('playing');
+            } else {
+                video.pause();
+                wrapper.classList.remove('playing');
+            }
+        });
+
+        // ভিডিও শেষ হয়ে গেলে বাটন আবার ফিরে আসবে
+        video.addEventListener('ended', function() {
+            wrapper.classList.remove('playing');
+        });
+    </script>
 
 </body>
 </html>
