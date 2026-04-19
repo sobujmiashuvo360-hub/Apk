@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriendBook - Download App</title>
+    <style>
+        /* CSS অংশ */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 350px;
+            width: 90%;
+        }
+
+        .logo-container {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #28a745;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .brand-name {
+            color: #28a745;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo-container">
+            <img src="logo.png" alt="FriendBook Logo">
+        </div>
+
+        <div class="brand-name">FriendBook</div>
+
+        <a href="আপনার_এপিকে_ডাউনলোড_লিংক_এখানে_দিন" id="downloadLink" class="download-btn">
+            অ্যাপ্লিকেশন ডাউনলোড করুন
+        </a>
+    </div>
+
+    <script>
+        // জাভাস্ক্রিপ্ট অংশ (ভবিষ্যতে কোনো ট্র্যাকিং বা অ্যানিমেশন যোগ করতে চাইলে)
+        document.getElementById('downloadLink').addEventListener('click', function() {
+            console.log("ডাউনলোড শুরু হচ্ছে...");
+            // এখানে আপনি চাইলে অতিরিক্ত কোনো ফাংশন যোগ করতে পারেন
+        });
+    </script>
+
+</body>
+</html>
