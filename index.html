@@ -3,212 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FriendBook - Premium Download</title>
+    <title>FriendBook App Download</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Hind+Siliguri:wght@400;600&display=swap');
-
         body {
-            margin: 0;
-            padding: 20px 0;
-            font-family: 'Poppins', 'Hind Siliguri', sans-serif;
-            background: linear-gradient(135deg, #0a1f15 0%, #103322 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f0f0f;
             color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
         }
 
-        /* ব্যাকগ্রাউন্ড গ্লো */
-        .bg-glow {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: #00ff73;
-            filter: blur(160px);
-            opacity: 0.1;
-            top: -100px;
-            z-index: -1;
-        }
-
-        .container {
-            text-align: center;
-            background: rgba(18, 43, 30, 0.7);
-            padding: 35px 25px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            max-width: 380px;
-            width: 90%;
-            margin-bottom: 30px;
-        }
-
-        /* লোগো সেকশন */
-        .logo-box {
-            width: 90px;
-            height: 90px;
-            margin: 0 auto 15px;
-            border-radius: 20px;
-            border: 3px solid #00c464;
-            padding: 4px;
-            background: #fff;
-            box-shadow: 0 0 20px rgba(0, 196, 100, 0.3);
-        }
-
-        .logo-box img {
+        /* News Ticker Style */
+        .ticker-wrap {
+            position: relative;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 14px;
-        }
-
-        .brand-name {
-            font-size: 28px;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        /* ডাউনলোড বাটন */
-        .download-btn {
-            background: linear-gradient(90deg, #00b85c 0%, #008a45 100%);
-            color: white;
-            padding: 15px 35px;
-            font-size: 18px;
-            font-weight: 600;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
+            height: 50px;
+            background: linear-gradient(to bottom, #3a0000 0%, #000000 40%, #1a0000 60%, #4a0000 100%);
+            border-bottom: 2px solid #333;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+            overflow: hidden;
+            display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 10px 20px rgba(0, 184, 92, 0.3);
+        }
+
+        .ticker-static {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #d32f2f;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 0 15px;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 5px 0px 10px rgba(0,0,0,0.6);
+        }
+
+        .running-text {
+            white-space: nowrap;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            position: absolute;
+            z-index: 1;
+            padding-left: 100%;
+            animation: scroll-left 20s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* App Cards - Strictly Side-by-Side */
+        .download-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap; /* কোনো অবস্থাতেই নিচে নামবে না */
+            justify-content: center;
+            gap: 15px;
+            padding: 30px 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .app-card {
+            background: #1e1e1e;
+            border-radius: 15px;
+            padding: 20px 10px; /* মোবাইলের জন্য প্যাডিং কমানো হয়েছে */
+            text-align: center;
+            width: 48%; /* স্ক্রিনের অর্ধেক জায়গা নিবে */
+            box-sizing: border-box;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .app-card:hover {
+            border-color: #d32f2f;
+            box-shadow: 0 15px 40px rgba(211, 47, 47, 0.2);
+        }
+
+        .app-logo {
+            width: 60px; /* সাইজ ছোট করা হয়েছে যেন পাশাপাশি আঁটে */
+            height: 60px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin: 0 auto 15px auto;
+            display: block;
+            border: 2px solid #333;
+        }
+
+        .app-title {
+            font-size: 18px; /* মোবাইলের জন্য টেক্সট সাইজ মানানসই করা হয়েছে */
+            margin: 0 0 5px 0;
+            font-weight: 700;
+        }
+
+        .app-version {
+            font-size: 11px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 0;
+            width: 100%;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 13px;
             transition: 0.3s;
-            margin-bottom: 10px;
+        }
+
+        .lite-btn {
+            background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
         }
 
         .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(0, 184, 92, 0.5);
+            filter: brightness(1.1);
+            transform: scale(1.03);
         }
 
-        /* ভিডিও সেকশন */
+        /* Video Section - Centered below cards */
         .video-section {
-            margin-top: 30px;
-            width: 100%;
-        }
-
-        .video-label {
-            font-size: 15px;
-            color: #a0c2b1;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        /* প্রিমিয়াম ভিডিও প্লেয়ার (1:1 Ratio) */
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            background: #000;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 2px solid rgba(0, 196, 100, 0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            cursor: pointer;
-        }
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* কাস্টম প্লে বাটন (মাঝখানে) */
-        .play-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70px;
-            height: 70px;
-            background: rgba(0, 184, 92, 0.8);
-            border-radius: 50%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            transition: 0.4s;
-            z-index: 2;
+            padding-bottom: 50px;
+            margin-top: 10px;
         }
 
-        .play-overlay svg {
-            width: 35px;
-            height: 35px;
-            fill: white;
-            margin-left: 5px;
+        .video-instruction {
+            font-size: 16px;
+            color: #ff5252;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
-        /* প্লে হওয়া অবস্থায় বাটন লুকানো */
-        .playing .play-overlay {
-            opacity: 0;
-            visibility: hidden;
-            transform: translate(-50%, -50%) scale(1.5);
+        .promo-video {
+            width: 280px;
+            height: 280px; /* 1:1 Ratio */
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            border: 2px solid #333;
+            pointer-events: none;
+        }
+
+        /* বড় স্ক্রিনের (PC/Tablet) জন্য একটু বড় সাইজ */
+        @media (min-width: 600px) {
+            .app-card { padding: 30px 20px; }
+            .app-logo { width: 85px; height: 85px; }
+            .app-title { font-size: 24px; }
+            .app-version { font-size: 14px; margin-bottom: 30px; }
+            .download-btn { font-size: 16px; padding: 14px 0; }
+            .promo-video { width: 350px; height: 350px; }
+            .video-instruction { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"></div>
-
-    <div class="container">
-        <div class="logo-box">
-            <img src="logo.png" alt="Logo">
-        </div>
-
-        <div class="brand-name">FriendBook</div>
-
-        <a href="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/friendbook.apk" class="download-btn">
-            <svg style="width:22px;height:22px" viewBox="0 0 24 24"><path fill="currentColor" d="M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z" /></svg>
-            ডাউনলোড করুন
-        </a>
-
-        <div class="video-section">
-            <span class="video-label">Install  করার আগে এই ভিডিওটি দেখুন</span>
-            
-            <div class="video-container" id="videoWrapper">
-                <video id="myVideo" preload="metadata">
-                    <source src="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/vid.mp4" type="video/mp4">
-                    আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।
-                </video>
-                
-                <div class="play-overlay" id="playBtn">
-                    <svg viewBox="0 0 24 24"><path d="M8,5.14V19.14L19,12.14L8,5.14Z" /></svg>
-                </div>
-            </div>
+    <div class="ticker-wrap">
+        <div class="ticker-static">ঘোষণা</div>
+        <div class="running-text">
+            FriendBook এর নতুন সংস্করণ v9.0 এবং FriendBook Lite v4.0 রিলিজ হয়েছে! দ্রুত গতির এক্সপেরিয়েন্স পেতে এখনই ডাউনলোড করুন।
         </div>
     </div>
 
-    <script>
-        const video = document.getElementById('myVideo');
-        const wrapper = document.getElementById('videoWrapper');
+    <div class="download-container">
+        
+        <div class="app-card">
+            <img src="logo.png" alt="FriendBook Logo" class="app-logo">
+            <h2 class="app-title">FriendBook</h2>
+            <div class="app-version">Official Application v9.0</div>
+            <a href="friendbook.apk" download="friendbook.apk" class="download-btn">Download v9.0</a>
+        </div>
 
-        // ভিডিও বা কন্টেইনারে ক্লিক করলে প্লে/পজ হবে
-        wrapper.addEventListener('click', function() {
-            if (video.paused) {
-                video.play();
-                wrapper.classList.add('playing');
-            } else {
-                video.pause();
-                wrapper.classList.remove('playing');
-            }
-        });
+        <div class="app-card">
+            <img src="logo.png" alt="FriendBook Lite Logo" class="app-logo">
+            <h2 class="app-title">FriendBook Lite</h2>
+            <div class="app-version">Lite Application v4.0</div>
+            <a href="friendbooklite.apk" download="friendbooklite.apk" class="download-btn lite-btn">Download Lite</a>
+        </div>
 
-        // ভিডিও শেষ হয়ে গেলে বাটন আবার ফিরে আসবে
-        video.addEventListener('ended', function() {
-            wrapper.classList.remove('playing');
-        });
-    </script>
+    </div>
+
+    <div class="video-section">
+        <div class="video-instruction">ইন্সটল করার আগে ভিডিওটি দেখুন</div>
+        <video class="promo-video" autoplay muted loop playsinline>
+            <source src="vid.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
 </body>
 </html>
