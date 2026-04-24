@@ -63,7 +63,7 @@
         .download-container {
             display: flex;
             flex-direction: row;
-            flex-wrap: nowrap; /* কোনো অবস্থাতেই নিচে নামবে না */
+            flex-wrap: nowrap;
             justify-content: center;
             gap: 15px;
             padding: 30px 15px;
@@ -74,9 +74,9 @@
         .app-card {
             background: #1e1e1e;
             border-radius: 15px;
-            padding: 20px 10px; /* মোবাইলের জন্য প্যাডিং কমানো হয়েছে */
+            padding: 20px 10px;
             text-align: center;
-            width: 48%; /* স্ক্রিনের অর্ধেক জায়গা নিবে */
+            width: 48%;
             box-sizing: border-box;
             border: 1px solid #333;
             transition: all 0.3s ease;
@@ -89,7 +89,7 @@
         }
 
         .app-logo {
-            width: 60px; /* সাইজ ছোট করা হয়েছে যেন পাশাপাশি আঁটে */
+            width: 60px;
             height: 60px;
             border-radius: 15px;
             object-fit: cover;
@@ -99,7 +99,7 @@
         }
 
         .app-title {
-            font-size: 18px; /* মোবাইলের জন্য টেক্সট সাইজ মানানসই করা হয়েছে */
+            font-size: 18px;
             margin: 0 0 5px 0;
             font-weight: 700;
         }
@@ -151,20 +151,18 @@
 
         .promo-video {
             width: 280px;
-            height: 280px; /* 1:1 Ratio */
+            height: 280px;
             object-fit: cover;
             border-radius: 20px;
             box-shadow: 0 15px 40px rgba(0,0,0,0.7);
             border: 2px solid #333;
-            pointer-events: none;
         }
 
-        /* বড় স্ক্রিনের (PC/Tablet) জন্য একটু বড় সাইজ */
         @media (min-width: 600px) {
             .app-card { padding: 30px 20px; }
             .app-logo { width: 85px; height: 85px; }
             .app-title { font-size: 24px; }
-            .app-version { font-size: 14px; margin-bottom: 30px; }
+            .app-version { font-size: 14px; margin-bottom: 25px; }
             .download-btn { font-size: 16px; padding: 14px 0; }
             .promo-video { width: 350px; height: 350px; }
             .video-instruction { font-size: 18px; }
@@ -186,23 +184,25 @@
             <img src="logo.png" alt="FriendBook Logo" class="app-logo">
             <h2 class="app-title">FriendBook</h2>
             <div class="app-version">Official Application v9.0</div>
-            <a href="friendbook.apk" download="friendbook.apk" class="download-btn">Download v9.0</a>
+            
+            <a href="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/friendbook.apk" download class="download-btn">Download v9.0</a>
         </div>
 
         <div class="app-card">
             <img src="logo.png" alt="FriendBook Lite Logo" class="app-logo">
             <h2 class="app-title">FriendBook Lite</h2>
             <div class="app-version">Lite Application v4.0</div>
-            <a href="friendbooklite.apk" download="friendbooklite.apk" class="download-btn lite-btn">Download Lite</a>
+            
+            <a href="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/friendbooklite.apk" download class="download-btn lite-btn">Download Lite</a>
         </div>
 
     </div>
 
     <div class="video-section">
         <div class="video-instruction">ইন্সটল করার আগে ভিডিওটি দেখুন</div>
-        <video class="promo-video" autoplay muted loop playsinline>
-            <source src="vid.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+        <video class="promo-video" autoplay muted loop playsinline controls>
+            <source src="https://github.com/sobujmiashuvo360-hub/Apk/releases/download/v1.0/vid.mp4" type="video/mp4">
+            আপনার ব্রাউজার ভিডিও সাপোর্ট করছে না।
         </video>
     </div>
 
